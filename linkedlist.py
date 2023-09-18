@@ -86,14 +86,14 @@ class LinkedList:
     def reverse(self):
         if not self.head:
             raise Exception("list empty")
-        
-        # TODO implement th ereverse linked list 
-           
+        llst = []
+        for node in self:
+            print(node.data)
+            llst.append(node.data)
 
-
-
-
-            
+        listReverted = llst[::-1]
+        copyllist = self.__init__(listReverted)    
+        return copyllist
 
 
     def __iter__(self):
