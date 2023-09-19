@@ -122,16 +122,11 @@ class LinkedList:
         nodes.append('None')
         return '->'.join(nodes)
 
-class Queue(LinkedList):
-    def __init__(self, nodes = None):
-        LinkedList.__init__(self, nodes=None)
-     ### TODO something wrong with inherecance -> fix it 
-
-    def __dequeue__(self):
+    def dequeue(self):
         next_node = self.head.next
         self.head = next_node
         return 
-    def __queue__(self, node):
+    def queue(self, node):
         self.add_last(node)
         return 
 
