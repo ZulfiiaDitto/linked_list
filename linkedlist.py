@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -75,6 +78,11 @@ class LinkedList:
             raise Exception('List is empty')
         if position == 0:
             return self.head
+        if position == -1:
+            for current_node in self: # this trick will traverse thougth the list and set up last node to the variable current_node
+                pass
+            return current_node.data
+
         else: 
             count = 0 
             for node in self:
@@ -84,11 +92,13 @@ class LinkedList:
             return('The position if out of range')
             
     def reverse(self):
+        """well not very efficient, 
+        but  I broke my brain to maintain all variables"""
+
         if not self.head:
             raise Exception("list empty")
         llst = []
         for node in self:
-            print(node.data)
             llst.append(node.data)
 
         listReverted = llst[::-1]
@@ -112,4 +122,13 @@ class LinkedList:
         nodes.append('None')
         return '->'.join(nodes)
 
-        
+    def dequeue(self):
+        next_node = self.head.next
+        self.head = next_node
+        return 
+    def queue(self, node):
+        self.add_last(node)
+        return 
+
+            
+
